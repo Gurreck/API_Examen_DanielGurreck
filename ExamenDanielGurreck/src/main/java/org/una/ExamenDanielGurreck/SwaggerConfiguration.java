@@ -25,11 +25,8 @@ public class SwaggerConfiguration {
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(apiInfo())
-                .tags(new Tag("Categorias Web", "Entidad de Categorias Web"),
-                        new Tag("Visitas Web", "Entidad de Visitas Web"),
-                        new Tag("Paginas Web", "Entidad de Paginas Web"),
-                        new Tag("Navegadores", "Entidad de Navegadores"),
-                        new Tag("Paginas Web Categorias Web", "Entidad de Navegadores")
+                .tags(new Tag("Membresias", "Entidad de Membresias")
+
                 );
 
     }
