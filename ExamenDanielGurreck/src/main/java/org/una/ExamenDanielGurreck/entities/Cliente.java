@@ -7,6 +7,8 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "exa_dan_clientes")
@@ -28,6 +30,9 @@ public class Cliente implements Serializable {
 
     @Column(name = "telefono", length = 10)
     private String telefono;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "cliente")
+    private List<ClienteTipoServicio> clientesTiposServicios = new ArrayList<>();
 
     private static final long serialVersionUID = 1L;
 

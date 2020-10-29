@@ -36,6 +36,9 @@ public class TipoServicio implements Serializable {
     @Column(name = "nombre", length = 30)
     private String nombre;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "tipoServicio")
+    private List<ClienteTipoServicio> clientesTiposServicios = new ArrayList<>();
+
     private static final long serialVersionUID = 1L;
 
     @PrePersist

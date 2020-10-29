@@ -1,22 +1,19 @@
 package org.una.ExamenDanielGurreck.dto;
 
+import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import java.util.Date;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class MembresiaDTO {
+public class ClienteTipoServicioDTO {
 
     private Long id;
-    private String periodicidad;
-    private Float monto;
-    private String descripcion;
-    private Date fechaRegistro;
-    private boolean estado;
+    private ClienteDTO cliente;
+    private TipoServicioDTO tipoServicio;
 
 }
