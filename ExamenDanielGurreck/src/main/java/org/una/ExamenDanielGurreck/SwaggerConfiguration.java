@@ -27,8 +27,9 @@ public class SwaggerConfiguration {
                 .apiInfo(apiInfo())
                 .tags(new Tag("Membresias", "Entidad de Membresias"),
                         new Tag("Clientes", "Entidad de Clientes"),
-                            new Tag("Tipos Servicios", "Entidad de Tipos Servicios"),
-                                new Tag("Clientes Tipos Servicios", "Entidad de Clientes Tipos Servicios")
+                            new Tag("Cobros Pendientes", "Entidad de Cobros Pendientes"),
+                                new Tag("Tipos Servicios", "Entidad de Tipos Servicios"),
+                                    new Tag("Clientes Tipos Servicios", "Entidad de Clientes Tipos Servicios")
 
                 );
 
