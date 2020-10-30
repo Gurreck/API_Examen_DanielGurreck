@@ -58,6 +58,17 @@ public class CobroPendienteServiceImplementation implements ICobroPendienteServi
     }
 
     @Override
+    @Transactional(readOnly = true)
+    public Optional<List<CobroPendienteDTO>> findByMembresiaId(Long id) {
+        return findList(cobroPendienteRepository.findByMembresiaId(id));
+    }
+
+    @Override
+    public Double cobroPendienteMonto(Long idCobroPendiente) {
+        return cobroPendienteRepository.cobroPendienteMonto(idCobroPendiente);
+    }
+
+    @Override
     @Transactional
     public CobroPendienteDTO create(CobroPendienteDTO cobroPendienteDTO) {
         CobroPendiente cobroPendiente = MapperUtils.EntityFromDto(cobroPendienteDTO, CobroPendiente.class);

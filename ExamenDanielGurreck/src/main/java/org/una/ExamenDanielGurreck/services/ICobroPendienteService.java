@@ -11,6 +11,10 @@ public interface ICobroPendienteService {
 
     public Optional<CobroPendienteDTO> findById(Long id);
 
+    public Optional<List<CobroPendienteDTO>> findByMembresiaId(Long id);
+
+    public Double cobroPendienteMonto(Long idCobroPendiente);
+
     public CobroPendienteDTO create(CobroPendienteDTO cobroPendiente);
 
     public Optional<CobroPendienteDTO> update(CobroPendienteDTO cobroPendiente, Long id);

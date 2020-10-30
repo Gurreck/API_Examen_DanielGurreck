@@ -42,6 +42,28 @@ public class CobroPendienteController{
         }
     }
 
+    @GetMapping("/findByMembresiaId/{id}")
+    @ApiOperation(value = "Obtiene una lista de cobros pendientes por el id de la membresia", response = CobroPendienteDTO.class, responseContainer = "List", tags = "Cobros Pendientes")
+    public ResponseEntity<?> findByMembresiaId(@PathVariable(value = "id") Long id) {
+        try {
+            return new ResponseEntity(cobroPendienteService.findByMembresiaId(id), HttpStatus.OK);
+
+        } catch (Exception e) {
+            return new ResponseEntity(e, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @GetMapping("/calcularMontoCobro/{id}")
+    @ApiOperation(value = "Obtiene el monto del cobro pendiente", response = CobroPendienteDTO.class, responseContainer = "List", tags = "Cobros Pendientes")
+    public ResponseEntity<?> cobroPendienteMonto(@PathVariable(value = "id") Long id) {
+        try {
+            return new ResponseEntity(cobroPendienteService.cobroPendienteMonto(id), HttpStatus.OK);
+
+        } catch (Exception e) {
+            return new ResponseEntity(e, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
     @PostMapping("/")
     @ApiOperation(value = "Permite crear un cobro pendiente", response = CobroPendienteDTO.class, tags = "Cobros Pendientes")
     public ResponseEntity<?> create(@Valid @RequestBody CobroPendienteDTO cobroPendienteDTO, BindingResult bindingResult) {
