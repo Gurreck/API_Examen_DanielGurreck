@@ -17,6 +17,4 @@ public interface ICobroPendienteService {
 
     public void delete(Long id);
 
-    public void deleteAll();
-
 }

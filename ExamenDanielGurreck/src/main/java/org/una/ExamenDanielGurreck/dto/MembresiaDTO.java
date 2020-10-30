@@ -13,10 +13,11 @@ import java.util.Date;
 public class MembresiaDTO {
 
     private Long id;
-    private String periodicidad;
+    private Integer periodicidad;
     private Float monto;
     private String descripcion;
     private Date fechaRegistro;
     private boolean estado;
+    private ClienteTipoServicioDTO clienteTipoServicio;
 
 }

@@ -84,12 +84,4 @@ public class CobroPendienteServiceImplementation implements ICobroPendienteServi
         cobroPendienteRepository.deleteById(id);
     }
 
-    @Override
-    @Transactional
-    public void deleteAll() {
-
-        cobroPendienteRepository.deleteAll();
-
-    }
-
 }

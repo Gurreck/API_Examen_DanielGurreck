@@ -86,15 +86,4 @@ public class CobroPendienteController{
         }
     }
 
-    @DeleteMapping("/")
-    @ApiOperation(value = "Permite eliminar todos los cobros pendientes", response = CobroPendienteDTO.class, tags = "Cobros Pendientes")
-    public ResponseEntity<?> deleteAll() {
-        try {
-            cobroPendienteService.deleteAll();
-            return new ResponseEntity(HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity(e, HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
-
 }

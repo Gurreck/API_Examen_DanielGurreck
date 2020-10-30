@@ -18,13 +18,7 @@ public class CobroPendiente implements Serializable {
     private Long id;
 
     @Column
-    private Integer anio;
-
-    @Column
     private Integer periodo;
-
-    @Column
-    private Float monto;
 
     @Column(name = "fecha_vencimiento", updatable = false)
     @Temporal(TemporalType.DATE)

@@ -14,5 +14,4 @@ public class ClienteDTO {
     private String nombreCompleto;
     private String cedula;
     private String telefono;
-    private boolean estado;
 }

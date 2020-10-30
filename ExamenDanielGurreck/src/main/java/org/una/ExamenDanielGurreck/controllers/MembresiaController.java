@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.una.ExamenDanielGurreck.dto.CobroPendienteDTO;
 import org.una.ExamenDanielGurreck.dto.MembresiaDTO;
+import org.una.ExamenDanielGurreck.services.ICobroPendienteService;
 import org.una.ExamenDanielGurreck.services.IMembresiaService;
 import javax.validation.Valid;
 
@@ -24,6 +26,9 @@ import javax.validation.Valid;
 public class MembresiaController {
     @Autowired
     private IMembresiaService membresiaService;
+
+    @Autowired
+    private ICobroPendienteService cobroPendienteService;
 
     final String MENSAJE_VERIFICAR_INFORMACION = "Debe verifiar el formato y la información de su solicitud con el formato esperado";
 
@@ -52,10 +57,13 @@ public class MembresiaController {
     public ResponseEntity<?> create(@Valid @RequestBody MembresiaDTO membresiaDTO, BindingResult bindingResult) {
         if (!bindingResult.hasErrors()) {
             try {
+
                 return new ResponseEntity(membresiaService.create(membresiaDTO), HttpStatus.CREATED);
+
             } catch (Exception e) {
                 return new ResponseEntity(e, HttpStatus.INTERNAL_SERVER_ERROR);
             }
+
         } else {
             return new ResponseEntity(MENSAJE_VERIFICAR_INFORMACION, HttpStatus.BAD_REQUEST);
         }

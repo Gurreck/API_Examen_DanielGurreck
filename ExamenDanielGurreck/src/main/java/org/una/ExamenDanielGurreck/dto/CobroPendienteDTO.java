@@ -14,7 +14,6 @@ public class CobroPendienteDTO {
 
     private Long id;
     private Integer periodo;
-    private Float monto;
     private Date fechaVencimiento;
     private MembresiaDTO membresia;
 
