@@ -3,7 +3,6 @@ package org.una.ExamenDanielGurreck.services;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -59,6 +58,12 @@ public class MembresiaServiceImplementation  implements IMembresiaService {
     @Transactional(readOnly = true)
     public Optional<MembresiaDTO> findById(Long id) {
         return oneToDto(membresiaRepository.findById(id));
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Optional<List<MembresiaDTO>> findMembresiasByClienteId(Long id) {
+        return findList(membresiaRepository.findMembresiasByClienteId(id));
     }
 
     public static Date parseDate(String date) {

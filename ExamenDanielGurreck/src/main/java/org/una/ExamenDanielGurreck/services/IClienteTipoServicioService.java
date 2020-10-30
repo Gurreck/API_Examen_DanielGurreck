@@ -1,9 +1,6 @@
 package org.una.ExamenDanielGurreck.services;
 
 import org.una.ExamenDanielGurreck.dto.ClienteTipoServicioDTO;
-import org.una.ExamenDanielGurreck.entities.ClienteTipoServicio;
-
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 

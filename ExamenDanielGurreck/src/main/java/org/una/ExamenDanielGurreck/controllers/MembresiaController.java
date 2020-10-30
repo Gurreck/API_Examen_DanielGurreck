@@ -2,23 +2,17 @@ package org.una.ExamenDanielGurreck.controllers;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.una.ExamenDanielGurreck.dto.CobroPendienteDTO;
+import org.springframework.web.bind.annotation.*;
 import org.una.ExamenDanielGurreck.dto.MembresiaDTO;
 import org.una.ExamenDanielGurreck.services.ICobroPendienteService;
 import org.una.ExamenDanielGurreck.services.IMembresiaService;
+
 import javax.validation.Valid;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/membresias")
@@ -49,6 +43,16 @@ public class MembresiaController {
             return new ResponseEntity(membresiaService.findById(id), HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity(e, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @GetMapping("/findMembresiasByClienteId/{id}")
+    @ApiOperation(value = "Obtiene una lista de las membrecias por el id del cliente", response = MembresiaDTO.class, responseContainer = "List", tags = "Membresias")
+    ResponseEntity<?> findMembresiasByClienteId(@PathVariable(value = "id") Long id) {
+        try {
+            return new ResponseEntity(membresiaService.findMembresiasByClienteId(id), HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity(e.getClass(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 

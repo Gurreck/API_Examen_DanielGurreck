@@ -7,7 +7,6 @@ import org.una.ExamenDanielGurreck.dto.CobroPendienteDTO;
 import org.una.ExamenDanielGurreck.entities.CobroPendiente;
 import org.una.ExamenDanielGurreck.repositories.ICobroPendienteRepository;
 import org.una.ExamenDanielGurreck.utils.MapperUtils;
-
 import java.util.List;
 import java.util.Optional;
 
